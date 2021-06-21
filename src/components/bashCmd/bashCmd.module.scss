@@ -1,0 +1,22 @@
+.bash {
+  margin-top: 1rem;
+  font-family: courier, monospace;
+  font-weight: bold;
+  .username {
+    color: rgb(0, 191, 0);
+  }
+  .processor {
+    color: rgb(191, 0, 191);
+  }
+}
+.cmd {
+  color: white;
+  > div {
+    display: inline-block;
+    margin-left: 0.3rem;
+  }
+}
+
+.typeingDone .cursor {
+  display: none;
+}

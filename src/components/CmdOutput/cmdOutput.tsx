@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
-import "./cmdOutput.css";
+import "./cmdOutput.scss";
 export const CmdOutput: React.FC<{
   command: Command;
   done: () => void;

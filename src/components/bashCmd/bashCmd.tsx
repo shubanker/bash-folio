@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
-import classes from "./bashCmd.module.css";
+import classes from "./bashCmd.module.scss";
 
 export const BashCmd: React.FC<{
   userName: string;

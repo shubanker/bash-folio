@@ -1,0 +1,11 @@
+.bash {
+  margin-top: 1rem;
+}
+.cmd > div {
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+.typeingDone .cursor {
+  display: none;
+}

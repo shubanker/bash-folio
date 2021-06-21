@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
+import "./cmdOutput.css";
 export const CmdOutput: React.FC<{
   command: Command;
   done: () => void;
@@ -18,6 +19,7 @@ export const CmdOutput: React.FC<{
         onInit={(typewriter) => {
           typewriter
             .pauseFor(500)
+            .changeDelay(80)
             .typeString(typeWritterText ?? "")
             .callFunction(() => {
               done();

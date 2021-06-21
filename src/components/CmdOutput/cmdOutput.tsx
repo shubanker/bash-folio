@@ -18,7 +18,6 @@ export const CmdOutput: React.FC<{
         options={typeWritterOptions ?? {}}
         onInit={(typewriter) => {
           typewriter
-            .pauseFor(500)
             .changeDelay(80)
             .typeString(typeWritterText ?? "")
             .callFunction(() => {

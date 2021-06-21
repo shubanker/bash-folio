@@ -43,11 +43,11 @@ export const Folio = () => {
     </React.Fragment>
   ));
   return (
-    <>
+    <div className="container">
       {commandJsx}
       {inProgress ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />
       )}
-    </>
+    </div>
   );
 };

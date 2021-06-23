@@ -7,7 +7,7 @@ import { CmdOutput } from "./CmdOutput/cmdOutput";
 export const Folio = () => {
   const [commandIndex, setCommandIndex] = useState(0);
   const [inProgress, setInProgress] = useState(false);
-  const [cmdTyping, setCmdTyping] = useState(true);
+  const [typedIndex, setTypedIndex] = useState(new Set<number>());
 
   //iterating next command after delay.
   useEffect(() => {
@@ -22,24 +22,25 @@ export const Folio = () => {
     setTimeout(() => {
       if (commandIndex < commands.length) {
         setCommandIndex(commandIndex + 1);
-        setCmdTyping(true);
         setInProgress(true);
       }
     }, 400);
   };
-  const enableOutputRendering = () => {
-    setCmdTyping(false);
+  const finishTypingCmd = (index: number) => {
+    const newSet = new Set(typedIndex);
+    newSet.add(index);
+    setTypedIndex(newSet);
   };
   const commandJsx = commands.slice(0, commandIndex).map((command, index) => (
     <React.Fragment key={index}>
       <BashCmd
         userName={bashUserName}
         cmd={command.command}
-        done={enableOutputRendering}
+        done={() => finishTypingCmd(index)}
       />
-      {index === commandIndex - 1 && cmdTyping ? null : (
+      {typedIndex.has(index) ? (
         <CmdOutput command={command} done={prepareNext} />
-      )}
+      ) : null}
     </React.Fragment>
   ));
   return (

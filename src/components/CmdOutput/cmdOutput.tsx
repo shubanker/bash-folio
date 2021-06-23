@@ -18,9 +18,11 @@ export const CmdOutput: React.FC<{
       <Typewriter
         options={typeWritterOptions ?? {}}
         onInit={(typewriter) => {
+          typewriter.changeDelay(65);
+          lines.forEach((line) =>
+            typewriter.typeString(line + "<br>").pauseFor(600)
+          );
           typewriter
-            .changeDelay(80)
-            .typeString(lines?.join("<br>") ?? "")
             .callFunction(() => {
               done();
               setTypingDone(true);

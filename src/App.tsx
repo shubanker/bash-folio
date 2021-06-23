@@ -1,4 +1,3 @@
-import "./App.css";
 import { Folio } from "./components/Folio";
 
 function App() {

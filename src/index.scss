@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #283945;
   padding: 2rem;
-}
-body * {
-  color: white;
+  * {
+    color: white;
+  }
 }

@@ -8,3 +8,6 @@ body {
   background-color: #283945;
   padding: 2rem;
 }
+body * {
+  color: white;
+}

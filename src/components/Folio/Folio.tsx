@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { bashUserName, commands } from "../../config";
+import { bashUserName, commands } from "../../commands.config";
 import { BashCmd } from "../bashCmd/bashCmd";
 import { CmdOutput } from "../CmdOutput/cmdOutput";
 import classes from "./Folio.module.scss";

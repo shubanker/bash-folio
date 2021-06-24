@@ -1,7 +1,7 @@
 import { LsList } from "./customComponents/ls-list";
 import { SocialCard } from "./customComponents/social-card/social-card";
 
-export const bashUserName = "shubanker@C";
+export const bashUserName = "dev@JS";
 
 export const commands: Command[] = [
   { command: "ls", component: LsList },

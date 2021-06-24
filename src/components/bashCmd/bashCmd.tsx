@@ -13,7 +13,7 @@ export const BashCmd: React.FC<{
     <>
       <div className={classes.bash}>
         <span className={classes.username}>{userName} </span>{" "}
-        <span className={classes.processor}>~/welcome</span>
+        <span className={classes.processor}>~/Welcome</span>
       </div>
       <div
         className={`${classes.cmd} ${typeingDone ? classes.typeingDone : ""}`}

@@ -13,11 +13,21 @@ export const Folio = () => {
   //To show empty shell input at end.
   const [inProgress, setInProgress] = useState(false);
 
+  const [scrollInterval, setScrollInterval] = useState(null as any);
+
   //start the loop.
   useEffect(() => {
     setTimeout(() => {
       setCommandCount(1);
       setInProgress(true);
+      setScrollInterval(
+        setInterval(() => {
+          window.scrollTo({
+            behavior: "smooth",
+            top: document.body.scrollHeight,
+          });
+        }, 2000)
+      );
     }, 400);
   }, []);
 
@@ -28,6 +38,8 @@ export const Folio = () => {
       if (commandCount < commands.length) {
         setCommandCount(commandCount + 1);
         setInProgress(true);
+      } else {
+        clearInterval(scrollInterval);
       }
     }, 400);
   };

@@ -6,38 +6,43 @@ import { CmdOutput } from "../CmdOutput/cmdOutput";
 import classes from "./Folio.module.scss";
 
 export const Folio = () => {
-  const [commandIndex, setCommandIndex] = useState(0);
-  const [inProgress, setInProgress] = useState(false);
+  //number of rendered commands
+  const [commandCount, setCommandCount] = useState(0);
+  //Track of index for whom command typing is done, now show result.
   const [typedIndex, setTypedIndex] = useState(new Set<number>());
+  //To show empty shell input at end.
+  const [inProgress, setInProgress] = useState(false);
 
-  //iterating next command after delay.
+  //start the loop.
   useEffect(() => {
     setTimeout(() => {
-      setCommandIndex(1);
+      setCommandCount(1);
       setInProgress(true);
     }, 400);
   }, []);
 
+  //Command finished rendering, wait a while and continue with next.
   const prepareNext = () => {
     setInProgress(false);
     setTimeout(() => {
-      if (commandIndex < commands.length) {
-        setCommandIndex(commandIndex + 1);
+      if (commandCount < commands.length) {
+        setCommandCount(commandCount + 1);
         setInProgress(true);
       }
     }, 400);
   };
-  const finishTypingCmd = (index: number) => {
+
+  const afterCmdTyped = (index: number) => {
     const newSet = new Set(typedIndex);
     newSet.add(index);
     setTypedIndex(newSet);
   };
-  const commandJsx = commands.slice(0, commandIndex).map((command, index) => (
+  const commandJsx = commands.slice(0, commandCount).map((command, index) => (
     <React.Fragment key={index}>
       <BashCmd
         userName={bashUserName}
         cmd={command.command}
-        done={() => finishTypingCmd(index)}
+        done={() => afterCmdTyped(index)}
       />
       {typedIndex.has(index) ? (
         <CmdOutput command={command} done={prepareNext} />

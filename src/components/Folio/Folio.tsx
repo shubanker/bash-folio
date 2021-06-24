@@ -1,8 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { bashUserName, commands } from "../config";
-import { BashCmd } from "./bashCmd/bashCmd";
-import { CmdOutput } from "./CmdOutput/cmdOutput";
+import { bashUserName, commands } from "../../config";
+import { BashCmd } from "../bashCmd/bashCmd";
+import { CmdOutput } from "../CmdOutput/cmdOutput";
+import classes from "./Folio.module.scss";
 
 export const Folio = () => {
   const [commandIndex, setCommandIndex] = useState(0);
@@ -44,7 +45,7 @@ export const Folio = () => {
     </React.Fragment>
   ));
   return (
-    <div className="container">
+    <div className={`container ${classes.container}`}>
       {commandJsx}
       {inProgress ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />

@@ -1,4 +1,4 @@
-import { Folio } from "./components/Folio";
+import { Folio } from "./components/Folio/Folio";
 
 function App() {
   return (

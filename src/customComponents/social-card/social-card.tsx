@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import classes from "./social-card.module.scss";
 
-export const SocialList: React.FC<{ next: () => void }> = ({ next }) => {
+export const SocialCard: React.FC<{ next: () => void }> = ({ next }) => {
   useEffect(() => {
     setTimeout(() => {
       next();
@@ -18,7 +18,7 @@ export const SocialList: React.FC<{ next: () => void }> = ({ next }) => {
     { faClass: "fa-linkedin", url: "#" },
   ];
   return (
-    <div className="container">
+    <div className={`container ${classes.container}`}>
       <div className="row">
         <div className="col-lg-4 col-md-6 col-12">
           <div className={classes.box}>
@@ -32,7 +32,7 @@ export const SocialList: React.FC<{ next: () => void }> = ({ next }) => {
 
             <div className={classes.icons}>
               {socialLinks.map(({ faClass, url }) => (
-                <a href={url}>
+                <a href={url} key={faClass + url}>
                   <i className={`${classes.icon} fa ${faClass}`}></i>
                 </a>
               ))}

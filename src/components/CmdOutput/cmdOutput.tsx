@@ -13,7 +13,11 @@ export const CmdOutput: React.FC<{
     op = <Component next={next} />;
   } else {
     op = typingDone ? (
-      lines?.map((txt) => <span className="command-line">{txt}</span>)
+      lines?.map((txt) => (
+        <span className="command-line" key={txt}>
+          {txt}
+        </span>
+      ))
     ) : (
       <Typewriter
         options={typeWritterOptions ?? {}}

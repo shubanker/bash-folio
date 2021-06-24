@@ -5,9 +5,9 @@ import classes from "./bashCmd.module.scss";
 export const BashCmd: React.FC<{
   userName: string;
   cmd?: string;
-  done?: () => void;
+  next?: () => void;
   retainCursor?: boolean;
-}> = ({ userName, done, cmd = "", retainCursor = false }) => {
+}> = ({ userName, next, cmd = "", retainCursor = false }) => {
   const [typeingDone, setTypeingDone] = useState(false);
   return (
     <>
@@ -29,7 +29,7 @@ export const BashCmd: React.FC<{
               .typeString(cmd || "")
               .callFunction(() => {
                 setTypeingDone(!retainCursor);
-                done?.();
+                next?.();
               })
               .start();
           }}

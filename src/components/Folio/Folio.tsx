@@ -42,10 +42,10 @@ export const Folio = () => {
       <BashCmd
         userName={bashUserName}
         cmd={command.command}
-        done={() => afterCmdTyped(index)}
+        next={() => afterCmdTyped(index)}
       />
       {typedIndex.has(index) ? (
-        <CmdOutput command={command} done={prepareNext} />
+        <CmdOutput command={command} next={prepareNext} />
       ) : null}
     </React.Fragment>
   ));

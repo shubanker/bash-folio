@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 
 export const LsList: React.FC<{ next: () => void }> = ({ next }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      next();
+    }, 1000);
+  }, []);
   const items = [
     "about.txt",
     "projects.md",
@@ -8,11 +13,6 @@ export const LsList: React.FC<{ next: () => void }> = ({ next }) => {
     "help.txt",
     "resume.pdf",
   ];
-  useEffect(() => {
-    setTimeout(() => {
-      next();
-    }, 1000);
-  }, []);
   return (
     <div className="container">
       <div className="row">

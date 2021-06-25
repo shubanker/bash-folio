@@ -2,18 +2,20 @@
 
 A Shell like Ux to showcase folio with typewritter effect.
 
+![Shell Folio](https://user-images.githubusercontent.com/12107685/123479848-1d5e9480-d61f-11eb-80bc-8d2837e8f453.png)
+
 ## Configuration
 
 You can easily configure your username & your list of commands/outputs in [commands.config.ts](src/commands.config.ts)
 
-configure the command and output:
+configure the command and its output:
 
 ```Typescript
 [
     { command: "whoami", typeWritterText: `Hello world` }
 ]
 ```
-
+### Custom Component
 You can also render a custom component as output :
 
 ```Typescript

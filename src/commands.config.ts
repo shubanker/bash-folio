@@ -4,11 +4,11 @@ import { SocialCard } from "./customComponents/social-card/social-card";
 export const bashUserName = "dev@JS";
 
 export const commands: Command[] = [
+  { command: "whoami", typeWritterText: `Hello world` },
   { command: "ls", component: LsList },
   {
     command: "cat about.txt",
     typeWritterText: `
-    Hello there,
   This is a project to showcase folio into a shell like Ui.
   I am bad at writing summary lol, you get the idea.
   `,

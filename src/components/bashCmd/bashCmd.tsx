@@ -25,6 +25,7 @@ export const BashCmd: React.FC<{
           }}
           onInit={(typewriter) => {
             typewriter
+              .changeDelay(55)
               .pauseFor(500)
               .typeString(cmd || "")
               .callFunction(() => {

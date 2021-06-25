@@ -18,8 +18,7 @@ export const commands: Command[] = [
     typeWritterText: `
     You can configure list of commands and output in commands.config.ts
   Also supports rendering a custom component, so you get a ton of possibilities. 
-  You need to call a function received in props as "next" inside your custom component to tell console to continue with next commands.
-  Enjoy!!
+  For custom components, you need to call "next()" passed in props inside your custom component to tell console to continue with next commands.
   `,
   },
   { command: "skp-md-viewer card.md", component: SocialCard },

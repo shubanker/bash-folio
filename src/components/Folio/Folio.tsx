@@ -20,6 +20,8 @@ export const Folio = () => {
     setTimeout(() => {
       setCommandCount(1);
       setInProgress(true);
+
+      //auto-Scroll to bottom until all commands are rendered
       setScrollInterval(
         setInterval(() => {
           window.scrollTo({

@@ -23,9 +23,18 @@ You can also render a custom component as output :
 
 ```
 
-> For custom components you need to call "next()" passed in props inside your custom component to tell console to continue with next commands, example:
+> For custom components you need to call "next()" passed in props inside your custom component to tell console to continue with next commands.
 
-https://github.com/shubanker/bash-folio/blob/bafb1739f8a3e8e11fff58353dba6a95134bb33a/src/customComponents/ls-list.tsx#L3-L8
+```Typescript
+export const HelloWorld: React.FC<{ next: () => void }> = ({ next }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      next();//continues with next commands.
+    }, 1000);
+  }, []);
+  return <div> Hello World</div>;
+};
+```
 
 ## License
 

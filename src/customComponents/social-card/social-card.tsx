@@ -3,10 +3,11 @@ import classes from "./social-card.module.scss";
 
 export const SocialCard: React.FC<{ next: () => void }> = ({ next }) => {
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       next();
     }, 1000);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [next]);
   const name = "John Doe";
   const imageUrl =
     "https://cdn.dribbble.com/users/14374/screenshots/3147608/programer.gif";

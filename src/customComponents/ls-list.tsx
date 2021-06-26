@@ -2,10 +2,11 @@ import { useEffect } from "react";
 
 export const LsList: React.FC<{ next: () => void }> = ({ next }) => {
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       next();
     }, 1000);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [next]);
   const items = [
     "about.txt",
     "projects.md",

@@ -15,7 +15,9 @@ configure the command and its output:
     { command: "whoami", typeWritterText: `Hello world` }
 ]
 ```
+
 ### Custom Component
+
 You can also render a custom component as output :
 
 ```Typescript
@@ -33,7 +35,7 @@ export const HelloWorld: React.FC<{ next: () => void }> = ({ next }) => {
     setTimeout(() => {
       next();//continues with next commands.
     }, 1000);
-  }, []);
+  }, [next]);
   return <div> Hello World</div>;
 };
 ```

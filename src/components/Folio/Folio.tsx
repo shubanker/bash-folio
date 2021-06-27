@@ -9,7 +9,7 @@ export const Folio = () => {
   //commands rendered.
   const [processedCommands, setProcessedCommands] = useState([] as Command[]);
   //To show empty shell input at end.
-  const [inProgress, setInProgress] = useState(false);
+  const [renderingCommand, setRenderingCommand] = useState(false);
   const [scrollIntervalRef, setScrollIntervalRef] = useState(null as any);
 
   const scrollToBottom = useCallback(() => {
@@ -21,7 +21,7 @@ export const Folio = () => {
 
   //Command finished rendering, wait a while and continue with next.
   const prepareNext = useCallback(() => {
-    setInProgress(false);
+    setRenderingCommand(false);
     setTimeout(() => {
       if (processedCommands.length < commands.length) {
         const withNextCommand = [
@@ -29,7 +29,7 @@ export const Folio = () => {
           commands[processedCommands.length],
         ];
         setProcessedCommands(withNextCommand);
-        setInProgress(true);
+        setRenderingCommand(true);
       } else {
         scrollToBottom();
         clearInterval(scrollIntervalRef);
@@ -43,6 +43,8 @@ export const Folio = () => {
 
   //start the loop.
   useEffect(() => {
+    //Start rendering with 1st command.
+    //need to run here only once to intitate loop, dont add this in dependency as this need to run only once.
     prepareNext();
     //auto-Scroll to bottom until all commands are rendered
     setScrollIntervalRef(
@@ -62,7 +64,7 @@ export const Folio = () => {
   return (
     <div className={`container ${classes.container}`}>
       {commandJsx}
-      {inProgress ? null : (
+      {renderingCommand ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />
       )}
     </div>

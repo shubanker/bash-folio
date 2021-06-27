@@ -7,11 +7,11 @@ export const CmdOutput: React.FC<{
 }> = ({ command, next }) => {
   const [typingDone, setTypingDone] = useState(false);
   const { component: Component, typeWritterText, typeWritterOptions } = command;
-  const lines: string[] = typeWritterText?.trim().split("\n") ?? [];
   let op: JSX.Element | JSX.Element[];
   if (Component) {
     op = <Component next={next} />;
   } else {
+    const lines: string[] = typeWritterText?.trim().split("\n") ?? [];
     op = typingDone ? (
       lines?.map((txt) => (
         <span className="command-line" key={txt}>

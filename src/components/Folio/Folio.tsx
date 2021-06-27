@@ -62,7 +62,7 @@ export const Folio = () => {
     />
   ));
   return (
-    <div className={`container ${classes.container}`}>
+    <div className={`container shell-container ${classes.container}`}>
       {commandJsx}
       {renderingCommand ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />

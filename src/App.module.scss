@@ -1,0 +1,15 @@
+.themeSelector {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+  .themeBlock {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    &.active {
+      outline: 2px solid #99999999;
+      box-shadow: 0 0 0.5rem 0 rgba(230, 230, 230, 1);
+    }
+  }
+}

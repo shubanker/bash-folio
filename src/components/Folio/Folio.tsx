@@ -1,6 +1,7 @@
 import { useCallback } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { bashUserName, commands } from "../../commands.config";
+import { useMount } from "../../hooks/useMount";
 import { BashCmd } from "../CommandComponent/bashCmd/bashCmd";
 import { CommandComponent } from "../CommandComponent/CommandComponent";
 import classes from "./Folio.module.scss";
@@ -42,7 +43,7 @@ export const Folio = () => {
   const dummyFn = useCallback(() => {}, []);
 
   //start the loop.
-  useEffect(() => {
+  useMount(() => {
     //Start rendering with 1st command.
     //need to run here only once to intitate loop, dont add this in dependency as this need to run only once.
     prepareNext();
@@ -52,7 +53,7 @@ export const Folio = () => {
         scrollToBottom();
       }, 2000)
     );
-  }, [scrollToBottom]);
+  });
 
   const commandJsx = processedCommands.map((command, index) => (
     <CommandComponent

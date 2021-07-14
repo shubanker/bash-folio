@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Folio } from "./components/Folio/Folio";
 import classes from "./App.module.scss";
+import { useMount } from "./hooks/useMount";
 function App() {
   const [theme, setTheme] = useState("theme-default");
   const themeColors: Record<string, string> = useMemo(
@@ -12,9 +13,9 @@ function App() {
     []
   );
   const keys = useMemo(() => Object.keys(themeColors), [themeColors]);
-  useEffect(() => {
+  useMount(() => {
     document.body.classList.add(theme);
-  }, []);
+  });
 
   const changeTheme = useCallback(
     (color: string) => {

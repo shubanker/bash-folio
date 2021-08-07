@@ -2,6 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Folio } from "./components/Folio/Folio";
 import classes from "./App.module.scss";
 import { useMount } from "./hooks/useMount";
+import { Toolbar } from "./components/Toolbar/Toolbar";
 function App() {
   const [theme, setTheme] = useState("theme-default");
   const themeColors: Record<string, string> = useMemo(
@@ -39,7 +40,8 @@ function App() {
     </div>
   );
   return (
-    <div>
+    <div className="container">
+      <Toolbar />
       <Folio />
       {themeJsx}
     </div>

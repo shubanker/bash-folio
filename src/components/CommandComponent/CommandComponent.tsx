@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { bashUserName } from "../../user.config";
+import { bashUserName } from "../../configs/user.config";
 import { BashCmd } from "./bashCmd/bashCmd";
 import { CmdOutput } from "./CmdOutput/cmdOutput";
 

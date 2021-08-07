@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { socialLinks, user } from "../../user.config";
+import { socialLinks, user } from "../../configs/user.config";
 import classes from "./social-card.module.scss";
 
 export const SocialCard: React.FC<{ next: () => void }> = ({ next }) => {

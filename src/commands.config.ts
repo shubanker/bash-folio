@@ -1,8 +1,6 @@
 import { LsList } from "./customComponents/ls-list";
 import { SocialCard } from "./customComponents/social-card/social-card";
 
-export const bashUserName = "dev@JS";
-
 export const commands: Command[] = [
   { command: "whoami", typeWritterText: `Hello world` },
   { command: "ls", component: LsList },

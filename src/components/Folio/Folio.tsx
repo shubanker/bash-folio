@@ -1,7 +1,8 @@
 import { useCallback } from "react";
 import { useState } from "react";
-import { bashUserName, commands } from "../../commands.config";
+import { commands } from "../../commands.config";
 import { useMount } from "../../hooks/useMount";
+import { bashUserName } from "../../user.config";
 import { BashCmd } from "../CommandComponent/bashCmd/bashCmd";
 import { CommandComponent } from "../CommandComponent/CommandComponent";
 import classes from "./Folio.module.scss";

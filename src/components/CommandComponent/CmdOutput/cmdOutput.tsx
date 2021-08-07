@@ -22,7 +22,7 @@ export const CmdOutput: React.FC<{
       <Typewriter
         options={typeWritterOptions ?? {}}
         onInit={(typewriter) => {
-          typewriter.changeDelay(40);
+          typewriter.changeDelay(typeWritterOptions?.typingSpeed ?? 35);
           lines.forEach((line) =>
             typewriter.typeString(line + "<br>").pauseFor(600)
           );

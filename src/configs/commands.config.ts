@@ -10,6 +10,9 @@ export const commands: Command[] = [
   This is a project to showcase folio into a shell like Ui.
   I am bad at writing summary lol, you get the idea.
   `,
+    typeWritterOptions: {
+      typingSpeed: 25,
+    },
   },
   {
     command: "cat help.txt",

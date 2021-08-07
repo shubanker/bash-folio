@@ -9,7 +9,7 @@ export const Toolbar = () => {
           {socialLinks.map(({ ficon, path, title }) => {
             return (
               <div className={`col-1 ${classes.icon}`} key={ficon + path}>
-                <a href={path}>
+                <a href={path} title={title}>
                   <i className={`fa ${ficon}`}></i>
                 </a>
               </div>

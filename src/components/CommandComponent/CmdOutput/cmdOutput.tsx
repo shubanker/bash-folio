@@ -6,10 +6,15 @@ export const CmdOutput: React.FC<{
   next: () => void;
 }> = ({ command, next }) => {
   const [typingDone, setTypingDone] = useState(false);
-  const { component: Component, typeWritterText, typeWritterOptions } = command;
+  const {
+    component: Component,
+    typeWritterText,
+    typeWritterOptions,
+    componentProps,
+  } = command;
   let op: JSX.Element | JSX.Element[];
   if (Component) {
-    op = <Component next={next} />;
+    op = <Component next={next} {...componentProps} />;
   } else {
     const lines: string[] = typeWritterText?.trim().split("\n") ?? [];
     op = typingDone ? (

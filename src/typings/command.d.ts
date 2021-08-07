@@ -3,4 +3,5 @@ interface Command {
   typeWritterText?: string;
   typeWritterOptions?: any;
   component?: React.FC<{ next: () => void }>;
+  componentProps?: any;
 }

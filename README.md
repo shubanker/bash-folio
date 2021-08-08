@@ -2,7 +2,7 @@
 
 A Shell like Ux to showcase folio with typewritter effect.
 
-![Shell Folio](https://user-images.githubusercontent.com/12107685/123479848-1d5e9480-d61f-11eb-80bc-8d2837e8f453.png)
+![Shell Folio](https://user-images.githubusercontent.com/12107685/128641521-1feefc02-cdae-47ef-8d8b-8d21fe571b93.png)
 
 ## Configuration
 

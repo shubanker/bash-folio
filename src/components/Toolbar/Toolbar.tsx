@@ -3,7 +3,7 @@ import classes from "./Toolbar.module.scss";
 
 export const Toolbar = () => {
   return (
-    <div className="row justify-content-end mb-2">
+    <div className="row justify-content-end mb-2 toolbar">
       <div className="col col-md-6 col-lg-4">
         <div className="row justify-content-end">
           {socialLinks.map(({ ficon, path, title }) => {

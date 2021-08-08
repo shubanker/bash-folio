@@ -21,17 +21,22 @@ body {
     color: white;
   }
 
-  @include shellTheme(#222); //change default theme color
+  @include shellTheme(#222, #2872b8); //change default theme color
 
   &.theme- {
     &light {
       * {
         color: black;
       }
-      @include shellTheme(#fff, #999);
+      .toolbar {
+        * {
+          color: #fff;
+        }
+      }
+      @include shellTheme(#fff, #444);
     }
     &blue {
-      @include shellTheme(#02203c, #15314b);
+      @include shellTheme(#02203c, #2872b8);
     }
   }
 }

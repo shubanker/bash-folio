@@ -6,7 +6,7 @@ A Shell like Ux to showcase folio with typewritter effect.
 
 ## Configuration
 
-You can easily configure your username & your list of commands/outputs in [commands.config.ts](src/commands.config.ts)
+You can easily configure your username & your list of commands/outputs in [commands.config.ts](src/configs/commands.config.ts)
 
 configure the command and its output:
 

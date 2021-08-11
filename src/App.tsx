@@ -4,7 +4,9 @@ import classes from "./App.module.scss";
 import { useMount } from "./hooks/useMount";
 import { Toolbar } from "./components/Toolbar/Toolbar";
 function App() {
-  const [theme, setTheme] = useState("theme-default");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ?? "theme-default"
+  );
   const themeColors: Record<string, string> = useMemo(
     () => ({
       "#222": "theme-default",
@@ -22,6 +24,7 @@ function App() {
     (color: string) => {
       document.body.classList.replace(theme, themeColors[color]);
       setTheme(themeColors[color]);
+      localStorage.setItem("theme", themeColors[color]);
     },
     [themeColors, theme]
   );

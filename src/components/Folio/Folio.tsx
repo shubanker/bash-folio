@@ -6,6 +6,7 @@ import { bashUserName } from "../../configs/user.config";
 import { BashCmd } from "../CommandComponent/bashCmd/bashCmd";
 import { CommandComponent } from "../CommandComponent/CommandComponent";
 import classes from "./Folio.module.scss";
+import { ReactComponent as MacIcons } from "./mac-icons.svg";
 
 export const Folio = () => {
   //commands rendered.
@@ -65,6 +66,7 @@ export const Folio = () => {
   ));
   return (
     <div className={`shell-container ${classes.container}`}>
+      <MacIcons />
       {commandJsx}
       {renderingCommand ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />

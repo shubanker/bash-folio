@@ -67,7 +67,6 @@ export const Folio = () => {
   return (
     <div className={`shell-container ${classes.container}`}>
       <MacIcons />
-      <i className={`fa fa-code ${classes.codeBackground}`}></i>
       {commandJsx}
       {renderingCommand ? null : (
         <BashCmd userName={bashUserName} cmd="" retainCursor={true} />

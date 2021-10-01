@@ -3,6 +3,7 @@ import { Folio } from "./components/Folio/Folio";
 import classes from "./App.module.scss";
 import { useMount } from "./hooks/useMount";
 import { Toolbar } from "./components/Toolbar/Toolbar";
+import { ENABLE_THEME_TOGGLE } from "./configs/app.config";
 function App() {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ?? "theme-default"
@@ -28,7 +29,7 @@ function App() {
     },
     [themeColors, theme]
   );
-  const themeJsx = (
+  const themeJsx = ENABLE_THEME_TOGGLE ? (
     <div className={classes.themeSelector}>
       {keys.map((color) => (
         <div
@@ -41,7 +42,7 @@ function App() {
         ></div>
       ))}
     </div>
-  );
+  ) : null;
   return (
     <div className="container">
       <Toolbar />

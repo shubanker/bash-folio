@@ -1,1 +1,1 @@
-export const ENABLE_THEME_TOGGLE = false;
+export const ENABLE_THEME_TOGGLE = true;

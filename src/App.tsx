@@ -3,10 +3,12 @@ import { Folio } from "./components/Folio/Folio";
 import classes from "./App.module.scss";
 import { useMount } from "./hooks/useMount";
 import { Toolbar } from "./components/Toolbar/Toolbar";
-import { ENABLE_THEME_TOGGLE } from "./configs/app.config";
+import { DEFAULT_THEME, ENABLE_THEME_TOGGLE } from "./configs/app.config";
 function App() {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ?? "theme-default"
+    ENABLE_THEME_TOGGLE
+      ? localStorage.getItem("theme") ?? DEFAULT_THEME
+      : DEFAULT_THEME
   );
   const themeColors: Record<string, string> = useMemo(
     () => ({

@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:gh-pages": "dotenv -e .env.gh-pages react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

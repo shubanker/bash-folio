@@ -24,3 +24,4 @@ yarn-error.log*
 
 # self
 /self
+/gh-pages
